@@ -10,20 +10,20 @@ The project integrates high-performance computing (HPC), differential gene expre
 
 Down Syndrome (DS), caused by an extra copy of human chromosome 21, is associated with neurological abnormalities, altered sleep architecture, and increased susceptibility to Alzheimer's disease.
 
-APP is triplicated in Down syndrome and is strongly associated with Alzheimer's disease neuropathology and sleep stability.
+APP is triplicated in Down Syndrome and is strongly associated with Alzheimer's disease neuropathology and sleep stability.
 
-Previous studies show that another triplicated gene in DS, RCAN1, partially rescues sleep disturbances in the Dp16 mosue model when it was restored to two copies. 
+Previous studies show that another triplicated gene in DS, RCAN1, partially rescues sleep disturbances in the Dp16 mouse model when it was restored to two copies. 
 
-**Research question:** Does normalizing APP gene dosage rescue transcriptomic abnormalities and alterations ins leep architecture in the hippocampus and hypothalamus of aged Dp16 mice?
+**Research question:** Does normalizing APP gene dosage rescue transcriptomic abnormalities and alterations in sleep architecture in the hippocampus and hypothalamus of aged Dp16 mice?
 
 We hypothesized that normalizing APP to wildytype levels would restore sleep disturbances and gene programs in aged Dp16 mice. 
 
 ## 2. Experimental Design
 
-Bulk RNA sequencing was performed using hippocampal and hypothalamic tissue from aged mice representing three genotypes.
+Bulk RNA sequencing was performed using hippocampal and hypothalamic tissue from aged mice in each of the three genotypes.
 
 | Variable | Description |
-| Model | Dp16 mouse model of Down Syndrome (duplication of the region syntenic to Hsa21 on Mmu16|
+| Model | Dp16 mouse model of Down Syndrome (duplication of the region syntenic to Hsa21 on Mmu16)|
 | Genotypes | Wild-type (WT), Dp16 (3 copies of APP), Dp16-App2N (2 copies of APP) |
 | Age | 10–14 months |
 | Sex | Male and female |
@@ -50,7 +50,7 @@ The analysis consists of upstream sequencing processing on CU Boulder's Alpine H
 Raw sequencing reads were processed using the following tools:
 
 1. **fastp:** Paired-end read quality control and trimming.
-2. **STAR:** Alignment to the mouse reference genome.
+2. **STAR:** Alignment to the mouse reference genome. (mm39)
 3. **featureCounts:** Gene-level read quantification.
 
 Processing scripts are organized by brain region and use SLURM for HPC job submission.
@@ -59,13 +59,12 @@ Processing scripts are organized by brain region and use SLURM for HPC job submi
 
 Downstream analyses were performed in R and include:
 
-- Count matrix preparation and quality control
+- Count matrix preparation and QC
 - Principal component analysis (PCA)
 - Sample clustering and heatmap visualization
 - Differential gene expression using DESeq2
 - Ranked gene list generation (DESeq2 Wald stat)
 - Gene set enrichment analysis using clusterProfiler
-- Functional pathway interpretation
 - Volcano plots and enrichment visualizations
 
 **Statistical thresholds:**
@@ -100,7 +99,7 @@ Response to interferon-beta remained strongly enriched across brain regions and 
 
 Restoring APP to disomic dosage did not broadly normalize gene expression or pathway-level abnormalities in aged Dp16 mice.
 
-Together with persistent sleep abnormalities, these exploratory findings suggest that APP-independent molecular mechanisms may contribute to neurological dysfunction associated with Down syndrome.
+Together with persistent sleep abnormalities, these exploratory findings suggest that APP-independent molecular mechanisms may contribute to neurological dysfunction associated with Down Syndrome.
 
 ## 5. Repository Structure
 
@@ -141,7 +140,6 @@ dp16-app2n-bulkrnaseq/
 ## 6. Software and Computational Tools
 
 | Category | Tools |
-|---|---|
 | HPC environment | CU Boulder Alpine, Linux, SLURM |
 | Quality control and trimming | fastp |
 | Read alignment | STAR |
@@ -188,7 +186,7 @@ Future improvements include:
 
 ## 8. Research Context
 
-This repository supports exploratory research examining the molecular consequences of APP gene dosage correction in an aged mouse model of Down syndrome.
+This repository supports exploratory research examining the molecular consequences of APP gene dosage correction in an aged mouse model of Down Syndrome.
 
 **Associated scientific abstract:**
 
@@ -198,4 +196,4 @@ Lawrence, J., Milstead, R., Cain, P., Borski, C., Zou, S., Kastengren, K., Kushn
 
 This repository documents computational methods and exploratory transcriptomic findings associated with an ongoing neuroscience research project.
 
-The analyses are intended to support reproducible research and investigation of gene-regulatory mechanisms in Down syndrome. The findings should not be interpreted as establishing causal effects of individual enriched pathways without experimental validation.
+The analyses are intended to support reproducible research and investigation of gene-regulatory mechanisms in Down Syndrome. The findings should not be interpreted as establishing causal effects of individual enriched pathways without experimental validation.
